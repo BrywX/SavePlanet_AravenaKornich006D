@@ -16,10 +16,31 @@
 }
 
 .fondo{
-    background-image: url(/assets/stars.png);
+    background-image: url(/assets/black.png);
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.fondo{
+    background-image: url(/assets/black.png);
+    margin-left: 10px;
+    margin-right: 10px;
+    display: block;
+}
+
+.sub{
+    margin-left: 20px;
+}
+
+.tit{
+    margin-left: 18px;
+    
+}
+
+.pop{
+    margin-left: 10px;
+
 }
 
 .tj{

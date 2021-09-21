@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Home 
-    </ion-title>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="icon-only" color="dark" name="menu-outline">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title class="ion-text-center" size="large">Inicio<ion-icon name="leaf-outline"></ion-icon></ion-title>
+      <ion-title class="ion-text-center" size="large">Home</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <p></p>
+    <ion-card class="fondo">
+      <ion-card-header >
+      <ion-card-title class="tct" size="large">Save Planet</ion-card-title>
+      </ion-card-header>
+      <img class="center" src="/assets/earth.gif"/>
+      <ion-card-content class="tj">
+        Sabemos que el cambio climático es un problema y necesitamos reducir la cantidad de CO2 y otros gases de efecto 
+        invernadero en el aire para solucionarlo, pero ¿cómo? Llevamos vidas ocupadas y escuchamos sobre algunas formas
+        básicas de tener un impacto, pero ¿cuáles son las mejores?.
+        <br>
+        <br>
+        Save Planet te ayuda a responder al cambio climático al descubrir acciones positivas y personalizadas 
+        que puedes hacer. Eso incluye acciones personales para reducir su contaminación por carbono y formas de ayudar 
+        a otros a cambiar sus formas de contaminación.
+      </ion-card-content>
+    </ion-card>
+    <hr>
 </ion-content>
+

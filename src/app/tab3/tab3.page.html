@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Actions
+      Profile
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,27 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title class="ion-text-center" size="large">Acciones<ion-icon name="heart-circle-outline"></ion-icon></ion-title>
+      <ion-title class="ion-text-center" size="large">Profile</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <p></p>
+  <ion-card class="fondo">
+    <ion-card-header>
+      <ion-card-title class="tct">Save Planet</ion-card-title>
+      <br>
+      <br>
+      <ion-img src="/assets/hpe.gif"></ion-img>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title class="tc">¡Únete al movimiento!</ion-card-title>
+      <ion-card-title class="tc">Acciones de ti para el mundo</ion-card-title>
+      <br>
+      <br>
+      <ion-button shape="round" expand="block" >Iniciar Sesion</ion-button>
+      <hr>
+      <ion-button routerLink="/register" expand="block" color="success" shape="round">Registrate </ion-button>
+      <hr>
+      <ion-card-subtitle class="tc">Al registrarte en Save Planet, aceptas nuestros Términos y Política de privacidad.</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
