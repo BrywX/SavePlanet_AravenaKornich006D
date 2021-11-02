@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sugerencias</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"
+          text="Back"
+          color="dark">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+
+<ion-content>
+  <ion-list #myList>
+    <ion-list-header>
+      <ion-label class="tct">Sugerencias</ion-label>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-item-sliding *ngFor="let dato of datos">
+        <ion-item>
+          <ion-label text-wrap> 
+            <h3>Nombre: {{dato.nombre}} {{dato.apellido}}</h3>
+            <h3>Categoria: {{dato.categoria}}</h3>
+            <h3>Email: {{dato.email}}</h3>
+            <h3>Sugerencia: {{dato.sugerencia}}</h3>
+            <p>{{dato.modified | date: 'short'}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="secondary" (click)="updateDatos(dato)">Actualizar</ion-item-option>
+         <ion-item-option color="danger" (click)="deleteDatos(dato)">Eliminar</ion-item-option> 
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-list>
+</ion-content>
+
+

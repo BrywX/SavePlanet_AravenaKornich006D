@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab3',
@@ -9,74 +9,34 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab3Page implements OnInit{
 
-  constructor(public alertController: AlertController) {}
+  constructor(public alertController: AlertController,
+    public navCtrl: NavController) {}
 
-  ngOnInit(){
+    ngOnInit() {
+    }
+  
+    async salir(){
+      const alert = await this.alertController.create({
+        header: 'Salir',
+        message: '¿Seguro que quieres salir?',
+        buttons: [
+          {
+            text: 'No',
+            handler: () => {
+              
+            }
+          }, {
+            text: 'Si',
+            handler: () => {
+              localStorage.removeItem('ingresado');
+              this.navCtrl.navigateRoot('login');
+            }
+          }
+        ]
+      });
+  
+      await alert.present();
+    }
+  
   }
-
-  async presentAlertPrompt() {
-    const alert = await this.alertController.create({
-      cssClass: 'clase-usuario',
-      header: 'Registro Usuario',
-      inputs: [
-        {
-          name: 'nombre',
-          type: 'text',
-          placeholder: 'Nombre Completo'
-        },
-        {
-          name: 'pais',
-          type: 'text',
-          placeholder: 'Pais'
-        },
- 
-        {
-          name: 'cumple',
-          type: 'date',
-          min: '1980-01-01',
-          max: '2020-01-01',
-          placeholder: 'Fecha de Nacimiento'
-        },
-        {
-          name: 'mail',
-          type: 'text',
-          placeholder: 'Email',
-          
-        },
-        {
-          name: 'nombreU',
-          type: 'text',
-          placeholder: 'Nombre de Usuario'
-        },
-        {
-          name: 'clave',
-          type: 'password',
-          placeholder: 'Contraseña',
-          cssClass: 'specialClass',
-          attributes: {
-            maxlength: 9,
-            inputmode: 'decimal'
-          }
-        }
-      ],
-      buttons: [
-        {
-          text: 'Confirmar',
-          handler: () => {
-            console.log('Confirm Ok');
-          }
-        },{
-          text: 'Cancelar',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-            console.log('Confirm Cancel');
-          }
-        }
-      ]
-    });
-
-    await alert.present();
-  }
-
-}
+  

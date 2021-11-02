@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Clima</ion-title>
+    <ion-button color="light" href="/tabs/tab1"><</ion-button>
+  </ion-toolbar>
+</ion-header>
+<br>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title class="ion-text-center" size="large">Clima</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card class="fondo">
+    <ion-card-header>
+      <ion-card-title >¡Consulta aqui la temperatura del Mundo!</ion-card-title>
+    </ion-card-header>
+    <br>
+    <ion-row>
+      <ion-card>
+        <ion-input type="text" placeholder="Pais a consultar" [(ngModel)]="param"></ion-input>
+          <ion-button (click)="traerClima()" color="warning">
+            Consultar
+        </ion-button>
+      </ion-card>
+      <br>
+      <ion-col>
+        <div>
+          <ion-card>
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Pais: {{clima.location.country}}
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+               Capital: {{clima.location.name}}
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Temperatura Actual: {{clima.current.temp_c}} °
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Pero está como: {{clima.current.feelslike_c}} °
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Hora y Fecha Actual: {{clima.location.localtime}}
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Condición del Cielo: {{clima.current.condition.text}}
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Velocidad del Viento: {{clima.current.wind_kph}} kms
+              </ion-card-content>
+            </ion-card-subtitle>
+
+            <ion-card-subtitle class="sub">
+              <ion-card-content>
+                Cielo: {{clima.current.condition.text}}
+              <ion-img style="width: 130px; height: 130px" [src]=clima.current.condition.icon></ion-img>
+              </ion-card-content>
+            </ion-card-subtitle>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

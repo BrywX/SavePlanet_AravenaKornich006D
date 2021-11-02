@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"
+          text="Back"
+          color="dark">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<br>
+
+<ion-content>
+  <div class="fondo">
+  <br>
+  <ion-card-title class="tct">Envia tu Sugerencia!</ion-card-title>
+  <hr>
+  <br>
+  <h4 class="tc">Porque tu opinion nos importa: ayudanos a seguir creciendo enviando tu sugerecia de accion para concientizar el Calentamiento global.</h4>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <ion-item>
+    <ion-label position="fixed">Nombres</ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Apellidos</ion-label>
+    <ion-input type="text" [(ngModel)]="newDato.apellido"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Categoria</ion-label>
+    <ion-select type="option" interface="popover" [(ngModel)]="newDato.categoria">
+            <ion-select-option value="Aire Libre">Aire Libre</ion-select-option>
+            <ion-select-option value="Alimentos">Alimentos</ion-select-option>
+            <ion-select-option value="Casa & Trabajo">Casa & Trabajo</ion-select-option>
+            <ion-select-option value="Compras">Compras</ion-select-option>
+            <ion-select-option value="Defensa y elección">Eleccion & Debate</ion-select-option>
+            <ion-select-option value="Energia">Energia</ion-select-option>
+            <ion-select-option value="Familia & Comunidad">Familia & Comunidad</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Email</ion-label>
+    <ion-input type="email" [(ngModel)]="newDato.email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="fixed">Sugerencia</ion-label>
+    <ion-textarea type="text" [(ngModel)]="newDato.sugerencia"></ion-textarea>
+  </ion-item>
+  <br>
+  <ion-button (click)="addDatos()" expand="full" routerLink="/tabs/tab1">
+    Enviar Sugerencia
+  </ion-button>
+</div>
+</ion-content>
+

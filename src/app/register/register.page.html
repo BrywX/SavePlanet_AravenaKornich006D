@@ -1,49 +1,38 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Register</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tab3"
-          text="Back"
-          color="dark">
-      </ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
-<br>
-
 <ion-content>
-    <form class="fondo" #formulario="ngForm" (ngSubmit)="onSubmit()">
+    <form class="fondo" [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
       <ion-grid>
         <ion-row color="dark" justify-content-center >
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-            <div text-center> 
+            <div text-center>
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref="/login"
+                    text="Back"
+                    color="dark">
+                </ion-back-button>
+              </ion-buttons>
               <h1 class="tct">Crea tu Cuenta!</h1></div>
               <ion-img src="/assets/eth.gif"></ion-img>
             <div>
               <ion-item color="tint">
-                <ion-label position="stacked">Ingrese su nombre</ion-label>
-                <ion-input name="name" type="text" placeholder="Name" ngModel required></ion-input>
-              </ion-item>
-              <ion-item color="tint">
-                <ion-label position="stacked">Ingrese su Email</ion-label>
-                <ion-input name="email" type="email" placeholder="tu@email.com" [(ngModel)]= "usuario.email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required></ion-input>
+                <ion-label position="stacked">Ingrese nombre de Usuario</ion-label>
+                <ion-input name="name" type="text" placeholder="Name" formControlName="nombre" ></ion-input>
               </ion-item>
               <ion-item color="tint">
                 <ion-label position="stacked">Fecha de nacimiento</ion-label>
-                <ion-input name="cumple" type="date" min= "1980-01-01" max= "2021-09-15" placeholder="Fecha de Nacimiento" ngModel required></ion-input>
+                <ion-input name="cumple" type="date" min= "1980-01-01" max= "2021-09-15" placeholder="Fecha de Nacimiento"></ion-input>
               </ion-item>
               <ion-item color="tint">
                 <ion-label position="stacked">Contraseña</ion-label>
-                <ion-input name="password" type="password" placeholder="Password" [(ngModel)]= "usuario.password" required></ion-input>
+                <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
               </ion-item>
               <ion-item color="tint">
                 <ion-label position="stacked">Re-ingrese Contraseña</ion-label>
-                <ion-input name="confirm" type="password" placeholder="Password again" ngModel required></ion-input>
+                <ion-input formControlName="confirmacionPassword" name="confirm" type="password" placeholder="Password again" ></ion-input>
               </ion-item>
             </div>
             <div>
               <br>
-              <ion-button size="large" color="success" type="submit" [disabled]="formulario.invalid" expand="block" routerLink="/tab1">Registrate</ion-button>
+              <ion-button (click)="guardar()" size="large" color="success" type="submit" expand="block">Registrate</ion-button>
             </div>
           </ion-col>
         </ion-row>

@@ -38,6 +38,22 @@ export class AppComponent {
       icon: 'person-outline', 
       name: 'Perfil', 
       redirecTo: '/tabs/tab3'
+    },
+    {
+      icon: 'cloudy-night-outline', 
+      name: 'Clima', 
+      redirecTo: '/clima'
+    },
+    {
+      icon: 'create-outline', 
+      name: 'Enviar Sugerencias', 
+      redirecTo: '/datos'
+    },
+    {
+      icon: 'bulb-outline', 
+      name: 'Sugerencias', 
+      redirecTo: '/sugerencias'
+
     }
   ]
 
