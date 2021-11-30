@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClimaService } from '../services/clima.service';
-import { Clima } from '../interfaces/interfaces';
+import { Article } from '../interfaces/interfaces';
 
 @Component({
   selector: 'app-clima',
@@ -9,17 +9,20 @@ import { Clima } from '../interfaces/interfaces';
 })
 export class ClimaPage implements OnInit {
 
-  clima: Clima
-  param: String
+  sismos: Article[] = []
+  sismos2: any;
 
   constructor(private climaService: ClimaService) { }
 
   ngOnInit() {
-  }
+    this.climaService.getSismo().subscribe(resp=>{
+    // console.log('Sismos',resp);
+    // console.log(...resp.articles);
 
-  traerClima(){
-    this.climaService.getTopHeadLines(this.param).subscribe(resp=>{
-      this.clima=resp
+    // this.sismos.push(...resp);
+    // this.sismos2=resp
+    
+    this.sismos=resp
     });
   }
 

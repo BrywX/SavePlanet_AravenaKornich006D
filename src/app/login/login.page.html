@@ -25,6 +25,10 @@
         <ion-card-content>
           <ion-card-title class="tc">¡Únete al movimiento!</ion-card-title>
           <ion-card-title class="tc">Acciones de ti para el mundo</ion-card-title>
+          <br>
+          <br>
+          <br>
+          <br>
           <form [formGroup]="formularioLogin">
           <ion-item color="tint">
             <ion-input class="tct" formControlName="nombre" type="username" placeholder="Nombre de Usuario"></ion-input>
@@ -33,6 +37,7 @@
             <ion-input class="tct" formControlName="password" type="password" placeholder="Contraseña"></ion-input>
           </ion-item>
           </form>
+          <br>
           <ion-button (click)="ingresar()" shape="round" expand="block" >Iniciar Sesion</ion-button>
           <a target="_blank">¿Olvidaste tu contraseña?</a>
           <ion-button routerLink="/register" expand="block" color="success" shape="round">Registrarse </ion-button>

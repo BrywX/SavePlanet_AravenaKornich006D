@@ -1,23 +1,14 @@
-export interface Location {
-    name: String;
-    region: String;
-    country: String;
-    localtime: String;
+export interface Sismos {
+    articles: Article[];
 }
 
-export interface Current {
-    temp_c: String;
-    wind_kph: String;
-    feelslike_c: String;
-    condition: Condition;
-}
-
-export interface Clima {
-    location: Location;
-    current: Current;
-}
-
-export interface Condition {
-    text: String;
-    icon?: String;  
+export interface Article{
+    horaLocal: string;
+    horaUtc: string;
+    latitud: string;
+    longitud: string;
+    profundidad: string;
+    magnitud: string;
+    referencia: string;
+    mapa: string;    
 }

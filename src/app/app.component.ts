@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 interface Componente {
   icon: string;
   name: string;
@@ -40,8 +41,8 @@ export class AppComponent {
       redirecTo: '/tabs/tab3'
     },
     {
-      icon: 'cloudy-night-outline', 
-      name: 'Clima', 
+      icon: 'warning-outline', 
+      name: 'Sismos', 
       redirecTo: '/clima'
     },
     {

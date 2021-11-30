@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-import { Clima } from '../interfaces/interfaces';
+import { Article, Sismos } from '../interfaces/interfaces';
+
 
 
 @Injectable({
@@ -11,11 +12,10 @@ export class ClimaService {
 
   constructor(private http: HttpClient) { }
 
-  url='http://api.weatherapi.com/v1/current.json?key=4f7fcb36acf1423d909222615212710&'
-
-  getTopHeadLines(param)
+  getSismo()
   {
-    return this.http.get<Clima>(this.url+`q=${param}&aqi=no`);
+    return this.http.get<Article[]>
+    ('https://api-sismologia-chile.herokuapp.com');
   }
 
 }
