@@ -10,5 +10,4 @@ Carrera: Analista Programador Computacional
 
 Seccion: 006D
 
-Indicaciones para correr la aplicacion: Primero que nada hay que instalar storage en el cmd de la app, los comandos son los siguentes: npm install @ionic/storage y tambien este npm install @ionic/storage-angular . Con eso deberia funcionar la app correctamente, Saludos :D
-
+Indicaciones para correr la aplicacion: Tener instalado android studio y configurar los comandos con capacitor no con cordova.
